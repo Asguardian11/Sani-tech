@@ -2,194 +2,336 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A.Z.A TECH | HOME PAGE </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        a{
-          text-decoration: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A.Z.A TECH | HOME PAGE </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Back to Top Button */
-        #backToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            z-index: 9999;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        .hover-effect:hover {
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      z-index: 9999;
+    }
+
+    .hover-effect:hover {
       background-color: #000;
       color: #fff !important;
       transition: 0.3s;
     }
-    </style>
+
+    /* ===== LIGHT MODE (default) ===== */
+    body {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    nav.navbar {
+      background-color: #ffffff !important;
+    }
+
+    .navbar-toggler {
+      border-color: #212529 !important;
+    }
+
+    /* Default (dark burger for light mode) */
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .card {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    section.bg-light,
+    section.bg-white {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    /* Hero Section - Light Mode */
+    #home {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      color: #6c757d;
+    }
+
+    /* ===== DARK MODE (automatic) ===== */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212 !important;
+        color: #f8f9fa !important;
+      }
+
+      nav.navbar {
+        background-color: #1e1e1e !important;
+      }
+
+      .nav-link,
+      .navbar-brand {
+        color: #f8f9fa !important;
+      }
+
+      /* Burger icon white in dark mode */
+      .navbar-toggler {
+        border-color: #f8f9fa !important;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+      }
+
+      .card {
+        background-color: #1e1e1e !important;
+        color: #f8f9fa !important;
+        border: 1px solid #2a2a2a !important;
+      }
+
+      section.bg-light,
+      section.bg-white {
+        background-color: #1a1a1a !important;
+        color: #f8f9fa !important;
+      }
+
+      /* Hero Section - Dark Mode */
+      #home {
+        background-color: #121212 !important;
+        color: #f8f9fa !important;
+      }
+
+      .text-dark {
+        color: #f8f9fa !important;
+      }
+
+      .text-secondary {
+        color: #cccccc !important;
+      }
+
+      a.text-dark {
+        color: #f8f9fa !important;
+      }
+
+      a.text-dark:hover {
+        color: #ccc !important;
+      }
+
+      footer {
+        background-color: #1e1e1e !important;
+        color: #aaa !important;
+      }
+
+      .btn-dark {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+        border: none;
+      }
+
+      .btn-dark:hover {
+        background-color: #ccc !important;
+        color: #000 !important;
+      }
+
+      /* Form inputs */
+      input.form-control,
+      textarea.form-control {
+        background-color: #1e1e1e !important;
+        color: #f8f9fa !important;
+        border: 1px solid #444 !important;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #aaa !important;
+      }
+
+      /* Headings readable in dark mode */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #ffffff !important;
+      }
+    }
+  </style>
+
+
 </head>
 
 <body class="bg-white text-dark">
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-dark" href="index.html">A.Z.A-TECH</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="index.html">A.Z.A-TECH</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active text-dark px-3 py-2 rounded-pill hover-effect" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-    <!-- Main-->
-
-    <section id="outsourcing" class="pt-5 mt-5 pb-5 bg-light text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-4 text-uppercase">Outsourcing Services</h2>
-    <p class="lead text-secondary mx-auto mb-5" style="max-width: 850px;">
-      At <strong>A.Z.A TECH</strong>, we provide reliable <strong>Outsourcing Solutions</strong> 
-      designed to help businesses operate more efficiently and focus on their core objectives. 
-      We handle non-core operations with precision, confidentiality, and professionalism — 
-      allowing your team to achieve higher productivity and reduced operational costs.
-    </p>
-
-    <div class="row g-4">
-      <!-- Business Process Outsourcing -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Business Process Outsourcing</h5>
-            <p class="card-text text-secondary">
-              We manage administrative and operational processes such as data entry, customer support, 
-              and back-office tasks so your team can stay focused on growth.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- IT Outsourcing -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">IT Outsourcing</h5>
-            <p class="card-text text-secondary">
-              From software development to infrastructure management, our IT experts deliver 
-              secure and scalable solutions that support your business goals.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- HR Outsourcing -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">HR Outsourcing</h5>
-            <p class="card-text text-secondary">
-              We handle end-to-end HR functions — recruitment, payroll, and employee management — 
-              so you can focus on strategic planning and operations.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Finance & Accounting -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Finance & Accounting Outsourcing</h5>
-            <p class="card-text text-secondary">
-              Our team provides accurate bookkeeping, tax filing, and financial reporting 
-              to keep your business compliant and financially healthy.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Customer Support -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Customer Support Services</h5>
-            <p class="card-text text-secondary">
-              We offer professional customer support teams trained to represent your brand 
-              and provide exceptional service experiences across multiple channels.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Remote Workforce Management -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Remote Workforce Management</h5>
-            <p class="card-text text-secondary">
-              Whether you need virtual assistants or project teams, we handle recruitment, 
-              onboarding, and performance monitoring for remote staff effectively.
-            </p>
-          </div>
-        </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-dark px-3 py-2 rounded-pill hover-effect" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark px-3 py-2 rounded-pill hover-effect" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</section>
-
-   
+  </nav>
 
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="text-center py-3 border-top text-secondary">
-        <p>© 2025 A.Z.A-TECH. All Rights Reserved.</p>
-    </footer>
+  <!-- Main-->
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
-    <button id="backToTop" class="btn btn-dark rounded-circle">
-        ↑
-    </button>
+  <section id="outsourcing" class="pt-5 mt-5 pb-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4 text-uppercase">Outsourcing Services</h2>
+      <p class="lead text-secondary mx-auto mb-5" style="max-width: 850px;">
+        At <strong>A.Z.A TECH</strong>, we provide reliable <strong>Outsourcing Solutions</strong>
+        designed to help businesses operate more efficiently and focus on their core objectives.
+        We handle non-core operations with precision, confidentiality, and professionalism —
+        allowing your team to achieve higher productivity and reduced operational costs.
+      </p>
 
-    <!-- ===== JS ===== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const backToTop = document.getElementById("backToTop");
+      <div class="row g-4">
+        <!-- Business Process Outsourcing -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Business Process Outsourcing</h5>
+              <p class="card-text text-secondary">
+                We manage administrative and operational processes such as data entry, customer support,
+                and back-office tasks so your team can stay focused on growth.
+              </p>
+            </div>
+          </div>
+        </div>
 
-        // Show or hide button on scroll
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTop.style.display = "block";
-            } else {
-                backToTop.style.display = "none";
-            }
-        });
+        <!-- IT Outsourcing -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">IT Outsourcing</h5>
+              <p class="card-text text-secondary">
+                From software development to infrastructure management, our IT experts deliver
+                secure and scalable solutions that support your business goals.
+              </p>
+            </div>
+          </div>
+        </div>
 
-        // Scroll to top
-        backToTop.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
+        <!-- HR Outsourcing -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">HR Outsourcing</h5>
+              <p class="card-text text-secondary">
+                We handle end-to-end HR functions — recruitment, payroll, and employee management —
+                so you can focus on strategic planning and operations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Finance & Accounting -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Finance & Accounting Outsourcing</h5>
+              <p class="card-text text-secondary">
+                Our team provides accurate bookkeeping, tax filing, and financial reporting
+                to keep your business compliant and financially healthy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Customer Support Services</h5>
+              <p class="card-text text-secondary">
+                We offer professional customer support teams trained to represent your brand
+                and provide exceptional service experiences across multiple channels.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remote Workforce Management -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Remote Workforce Management</h5>
+              <p class="card-text text-secondary">
+                Whether you need virtual assistants or project teams, we handle recruitment,
+                onboarding, and performance monitoring for remote staff effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="text-center py-3 border-top text-secondary">
+    <p>© 2025 A.Z.A-TECH. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button id="backToTop" class="btn btn-dark rounded-circle">
+    ↑
+  </button>
+
+  <!-- ===== JS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const backToTop = document.getElementById("backToTop");
+
+    // Show or hide button on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+
+    // Scroll to top
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 
 </html>
-
